@@ -1,21 +1,20 @@
 class StringValues {
   static const String NAME = 'Manish Kumar';
-  static const String COPYRIGHT = '\u00a9 Manish Kumar 2020';
+  static const String COPYRIGHT = '\u00a9 Manish Kumar 2021';
 
   static int selectedOption = 0;
   static List options = [
     'home',
-    'no face - adobe ps',
-    'daily life - adobe ai',
-    'venlo - case study',
+    // 'no face - adobe ps',
+    // 'daily life - adobe ai',
+    // 'venlo - case study',
     'contact'
   ];
 
-  static const String IG = "https://www.instagram.com/lethal.uiux/";
+  static const String IG = "https://www.instagram.com/mannnish_/";
   static const String BEHANCE = "https://www.behance.net/mannnish";
-  static const String LINKEDIN = "https://www.linkedin.com/in/manish-kumar-21a8b4183/";
+  static const String LINKEDIN = "https://www.linkedin.com/in/mannnish/";
   static const String GITHUB = "https://github.com/mannnish/";
-
 
   static const String ABOUT = 'ABOUT';
   static const String ABOUTME =
@@ -26,14 +25,9 @@ class StringValues {
     'Python',
     'C++',
     'Dart',
-    'HTML-CSS',
+    'NodeJS',
   ];
-  static const List TOOLS_LIST = [
-    'Git & Github',
-    'Illustrator',
-    'Photoshop',
-    'Flare'
-  ];
+  static const List TOOLS_LIST = ['Git & Github', 'Firebase', 'Figma'];
   static const String TYPOGRAPHY = 'TYPOGRAPHY';
   static const String AaBb = 'AbBb';
   static const String SECOND_FONT = 'This Font is used as base font used throughout the application';

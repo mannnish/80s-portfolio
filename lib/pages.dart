@@ -6,20 +6,10 @@ import 'package:fpd/utils/style.dart';
 class Pages {
   static List widgetListGetter(BuildContext context, bool isDesktop) {
     return [
-      [
-        homePageOne(context, isDesktop),
-        homePageTwo(context, isDesktop),
-        homePageThree()
-      ],
-      [nofacePageOne(), nofacePageTwo(), nofacePageFour()],
-      [dlPageOne(), dlPageTwo(), dlPageThree()],
-      [
-        venloPageOne(),
-        venloPageTwo(),
-        venloPageThree(),
-        venloPageFour(),
-        venloPageFive(context, isDesktop)
-      ],
+      [homePageOne(context, isDesktop), homePageTwo(context, isDesktop), homePageThree()],
+      // [nofacePageOne(), nofacePageTwo(), nofacePageFour()],
+      // [dlPageOne(), dlPageTwo(), dlPageThree()],
+      // [venloPageOne(), venloPageTwo(), venloPageThree(), venloPageFour(), venloPageFive(context, isDesktop)],
       [contactPageOne(), contactPageTwo(context, isDesktop)],
     ];
   }
@@ -27,17 +17,10 @@ class Pages {
   static Widget homePageOne(context, isDesktop) {
     int fontReducer;
     if (isDesktop) {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.SCREEN_WIDTH,
-          height: Style.SCREEN_HEIGHT,
-          allowFontScaling: true)
-        ..init(context);
+      ScreenUtil.instance = ScreenUtil(width: Style.SCREEN_WIDTH, height: Style.SCREEN_HEIGHT, allowFontScaling: true)..init(context);
       fontReducer = 0;
     } else {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.PHONE_SCREEN_WIDTH,
-          height: Style.PHONE_SCREEN_HEIGHT,
-          allowFontScaling: true)
+      ScreenUtil.instance = ScreenUtil(width: Style.PHONE_SCREEN_WIDTH, height: Style.PHONE_SCREEN_HEIGHT, allowFontScaling: true)
         ..init(context);
       fontReducer = 5;
     }
@@ -51,8 +34,7 @@ class Pages {
           Expanded(
               flex: 4,
               child: Image(
-                image: NetworkImage(
-                    'https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif'),
+                image: NetworkImage('https://media.giphy.com/media/xUOxfjsW9fWPqEWouI/giphy.gif'),
                 fit: BoxFit.contain,
               )),
           Expanded(
@@ -64,18 +46,12 @@ class Pages {
                 children: [
                   Text(
                     StringValues.ABOUT,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: Style.KRONA,
-                        fontSize: ScreenUtil().setSp(35 - fontReducer)),
+                    style: TextStyle(color: Colors.white, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(35 - fontReducer)),
                   ),
                   SizedBox(height: ScreenUtil().setHeight(10)),
                   Text(
                     StringValues.ABOUTME,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: Style.OS_SEMIBOLD,
-                        fontSize: ScreenUtil().setSp(18 - fontReducer)),
+                    style: TextStyle(color: Colors.white, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                   )
                 ],
               ),
@@ -93,17 +69,10 @@ class Pages {
   static Widget homePageTwo(context, isDesktop) {
     int fontReducer;
     if (isDesktop) {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.SCREEN_WIDTH,
-          height: Style.SCREEN_HEIGHT,
-          allowFontScaling: true)
-        ..init(context);
+      ScreenUtil.instance = ScreenUtil(width: Style.SCREEN_WIDTH, height: Style.SCREEN_HEIGHT, allowFontScaling: true)..init(context);
       fontReducer = 0;
     } else {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.PHONE_SCREEN_WIDTH,
-          height: Style.PHONE_SCREEN_HEIGHT,
-          allowFontScaling: true)
+      ScreenUtil.instance = ScreenUtil(width: Style.PHONE_SCREEN_WIDTH, height: Style.PHONE_SCREEN_HEIGHT, allowFontScaling: true)
         ..init(context);
       fontReducer = 5;
     }
@@ -125,34 +94,22 @@ class Pages {
                 children: [
                   Text(
                     StringValues.LANGUAGE,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: Style.KRONA,
-                        fontSize: ScreenUtil().setSp(30 - (fontReducer * 2))),
+                    style: TextStyle(color: Colors.white, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(30 - (fontReducer * 2))),
                   ),
                   for (int i = 0; i < StringValues.LANGUAGES_LIST.length; i++)
                     Text(
                       StringValues.LANGUAGES_LIST[i],
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: Style.OS_SEMIBOLD,
-                          fontSize: ScreenUtil().setSp(18 - fontReducer)),
+                      style: TextStyle(color: Colors.white, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                     ),
                   SizedBox(height: ScreenUtil().setHeight(30 - fontReducer)),
                   Text(
                     StringValues.TOOLS,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: Style.KRONA,
-                        fontSize: ScreenUtil().setSp(30 - (fontReducer * 2))),
+                    style: TextStyle(color: Colors.white, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(30 - (fontReducer * 2))),
                   ),
                   for (int i = 0; i < StringValues.TOOLS_LIST.length; i++)
                     Text(
                       StringValues.TOOLS_LIST[i],
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: Style.OS_SEMIBOLD,
-                          fontSize: ScreenUtil().setSp(18 - fontReducer)),
+                      style: TextStyle(color: Colors.white, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                     ),
                 ],
               ),
@@ -191,8 +148,7 @@ class Pages {
           Expanded(
               flex: 4,
               child: Image(
-                image: NetworkImage(
-                    'https://media.giphy.com/media/lnyEFmow8MXJfbuGV8/giphy.gif'),
+                image: NetworkImage('https://media.giphy.com/media/lnyEFmow8MXJfbuGV8/giphy.gif'),
                 fit: BoxFit.contain,
               )),
           Expanded(
@@ -382,17 +338,10 @@ class Pages {
   static Widget venloPageFive(BuildContext context, bool isDesktop) {
     int fontReducer;
     if (isDesktop) {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.SCREEN_WIDTH,
-          height: Style.SCREEN_HEIGHT,
-          allowFontScaling: true)
-        ..init(context);
+      ScreenUtil.instance = ScreenUtil(width: Style.SCREEN_WIDTH, height: Style.SCREEN_HEIGHT, allowFontScaling: true)..init(context);
       fontReducer = 0;
     } else {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.PHONE_SCREEN_WIDTH,
-          height: Style.PHONE_SCREEN_HEIGHT,
-          allowFontScaling: true)
+      ScreenUtil.instance = ScreenUtil(width: Style.PHONE_SCREEN_WIDTH, height: Style.PHONE_SCREEN_HEIGHT, allowFontScaling: true)
         ..init(context);
       fontReducer = 8;
     }
@@ -415,8 +364,7 @@ class Pages {
                       children: [
                         Expanded(
                           flex: 1,
-                          child:
-                              Container(color: Color.fromRGBO(44, 51, 59, 0.5)),
+                          child: Container(color: Color.fromRGBO(44, 51, 59, 0.5)),
                         ),
                         Expanded(
                           flex: 1,
@@ -449,37 +397,25 @@ class Pages {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: ScreenUtil().setHeight(40 - (fontReducer*3))),
+                SizedBox(height: ScreenUtil().setHeight(40 - (fontReducer * 3))),
                 Text(
                   StringValues.TYPOGRAPHY,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: Style.KRONA,
-                      fontSize: ScreenUtil().setSp(20-fontReducer)),
+                  style: TextStyle(color: Colors.black, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(20 - fontReducer)),
                 ),
                 SizedBox(height: ScreenUtil().setHeight(10)),
                 Text(
                   StringValues.AaBb,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: Style.MS_BOLD,
-                      fontSize: ScreenUtil().setSp(80-(fontReducer*6))),
+                  style: TextStyle(color: Colors.black, fontFamily: Style.MS_BOLD, fontSize: ScreenUtil().setSp(80 - (fontReducer * 6))),
                 ),
                 SizedBox(height: ScreenUtil().setHeight(5)),
                 Text(
                   'MontSerrat - Bold',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: Style.KRONA,
-                      fontSize: ScreenUtil().setSp(25-fontReducer)),
+                  style: TextStyle(color: Colors.black, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(25 - fontReducer)),
                 ),
-                SizedBox(height: ScreenUtil().setHeight(50-fontReducer*4)),
+                SizedBox(height: ScreenUtil().setHeight(50 - fontReducer * 4)),
                 Text(
                   'Poppins - ${StringValues.SECOND_FONT}',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontFamily: Style.OS_SEMIBOLD,
-                      fontSize: ScreenUtil().setSp(18-fontReducer)),
+                  style: TextStyle(color: Colors.black, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                 )
               ],
             ),
@@ -493,10 +429,7 @@ class Pages {
     return Container(
       constraints: BoxConstraints.expand(),
       decoration: BoxDecoration(
-        image: DecorationImage(
-            image: NetworkImage(
-                'https://media.giphy.com/media/hrF6JGf0Rxtjvak92R/giphy.gif'),
-            fit: BoxFit.cover),
+        image: DecorationImage(image: NetworkImage('https://media.giphy.com/media/hrF6JGf0Rxtjvak92R/giphy.gif'), fit: BoxFit.cover),
       ),
     );
   }
@@ -504,17 +437,10 @@ class Pages {
   static Widget contactPageTwo(context, bool isDesktop) {
     int fontReducer;
     if (isDesktop) {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.SCREEN_WIDTH,
-          height: Style.SCREEN_HEIGHT,
-          allowFontScaling: true)
-        ..init(context);
+      ScreenUtil.instance = ScreenUtil(width: Style.SCREEN_WIDTH, height: Style.SCREEN_HEIGHT, allowFontScaling: true)..init(context);
       fontReducer = 0;
     } else {
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.PHONE_SCREEN_WIDTH,
-          height: Style.PHONE_SCREEN_HEIGHT,
-          allowFontScaling: true)
+      ScreenUtil.instance = ScreenUtil(width: Style.PHONE_SCREEN_WIDTH, height: Style.PHONE_SCREEN_HEIGHT, allowFontScaling: true)
         ..init(context);
       fontReducer = 8;
     }
@@ -526,12 +452,12 @@ class Pages {
       child: Row(
         children: [
           Expanded(
-              flex: 4,
-              child: Image(
-                image: NetworkImage(
-                    'https://media.giphy.com/media/c9GU2BJqhhTJS/giphy.gif'),
-                fit: BoxFit.contain,
-              )),
+            flex: 4,
+            child: Image(
+              image: NetworkImage('https://media.giphy.com/media/c9GU2BJqhhTJS/giphy.gif'),
+              fit: BoxFit.contain,
+            ),
+          ),
           Expanded(
             flex: 4,
             child: Column(
@@ -540,18 +466,12 @@ class Pages {
               children: [
                 Text(
                   StringValues.CONTACT,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: Style.KRONA,
-                      fontSize: ScreenUtil().setSp(35 - fontReducer*2)),
+                  style: TextStyle(color: Colors.white, fontFamily: Style.KRONA, fontSize: ScreenUtil().setSp(35 - fontReducer * 2)),
                 ),
                 SizedBox(height: ScreenUtil().setHeight(10)),
                 Text(
                   StringValues.CONTACTME,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: Style.OS_SEMIBOLD,
-                      fontSize: ScreenUtil().setSp(18-fontReducer)),
+                  style: TextStyle(color: Colors.white, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                 ),
                 SizedBox(height: ScreenUtil().setHeight(10)),
                 RaisedButton(
@@ -559,10 +479,7 @@ class Pages {
                   onPressed: () {},
                   child: Text(
                     StringValues.EMAIL,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: Style.OS_SEMIBOLD,
-                        fontSize: ScreenUtil().setSp(18-fontReducer)),
+                    style: TextStyle(color: Colors.white, fontFamily: Style.OS_SEMIBOLD, fontSize: ScreenUtil().setSp(18 - fontReducer)),
                   ),
                 )
               ],

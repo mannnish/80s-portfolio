@@ -25,10 +25,8 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    menuAnim =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
-    homeAnim =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 600));
+    menuAnim = AnimationController(vsync: this, duration: Duration(milliseconds: 600));
+    homeAnim = AnimationController(vsync: this, duration: Duration(milliseconds: 600));
   }
 
   @override
@@ -78,8 +76,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                         StringValues.options[i],
                         style: TextStyle(
                           fontFamily: Style.OS_SEMIBOLD,
-                          color: Style.FONT_COLOR.withOpacity(
-                              StringValues.selectedOption == i ? 0.5 : 1),
+                          color: Style.FONT_COLOR.withOpacity(StringValues.selectedOption == i ? 0.5 : 1),
                           fontSize: ScreenUtil().setSp(18 - fontReducer),
                         ),
                       ),
@@ -98,9 +95,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                       child: FaIcon(
                         FontAwesomeIcons.instagram,
                         size: ScreenUtil().setSp(20 - fontReducer),
-                        color: Style.FONT_COLOR == Colors.black
-                            ? Colors.purpleAccent
-                            : Style.FONT_COLOR,
+                        color: Style.FONT_COLOR == Colors.black ? Colors.purpleAccent : Style.FONT_COLOR,
                       ),
                     ),
                     SizedBox(width: ScreenUtil().setWidth(20)),
@@ -114,9 +109,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                       child: FaIcon(
                         FontAwesomeIcons.behance,
                         size: ScreenUtil().setSp(20 - fontReducer),
-                        color: Style.FONT_COLOR == Colors.black
-                            ? Colors.blueAccent
-                            : Style.FONT_COLOR,
+                        color: Style.FONT_COLOR == Colors.black ? Colors.blueAccent : Style.FONT_COLOR,
                       ),
                     ),
                     SizedBox(width: ScreenUtil().setWidth(20)),
@@ -130,9 +123,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                       child: FaIcon(
                         FontAwesomeIcons.linkedinIn,
                         size: ScreenUtil().setSp(20 - fontReducer),
-                        color: Style.FONT_COLOR == Colors.black
-                            ? Colors.indigo
-                            : Style.FONT_COLOR,
+                        color: Style.FONT_COLOR == Colors.black ? Colors.indigo : Style.FONT_COLOR,
                       ),
                     ),
                     SizedBox(width: ScreenUtil().setWidth(20)),
@@ -170,11 +161,8 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
 
   Widget rightPanel() {
     return Container(
-      height: ScreenUtil().setHeight(widget.isDesktop
-          ? Style.LEFT_N_RIGHT_FRAME1_H
-          : Style.PHONE_RIGHT_FRAME_H),
-      width: ScreenUtil().setWidth(
-          widget.isDesktop ? Style.RIGHT_FRAME1_W : Style.PHONE_RIGHT_FRAME_W),
+      height: ScreenUtil().setHeight(widget.isDesktop ? Style.LEFT_N_RIGHT_FRAME1_H : Style.PHONE_RIGHT_FRAME_H),
+      width: ScreenUtil().setWidth(widget.isDesktop ? Style.RIGHT_FRAME1_W : Style.PHONE_RIGHT_FRAME_W),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -193,58 +181,42 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                               ? () {
                                   setState(() {
                                     currentPageIndex--;
-                                    _pc.animateToPage(currentPageIndex,
-                                        duration: Duration(milliseconds: 500),
-                                        curve: Curves.fastOutSlowIn);
+                                    _pc.animateToPage(currentPageIndex, duration: Duration(milliseconds: 500), curve: Curves.fastOutSlowIn);
                                   });
                                 }
                               : null,
                           child: Text(
                             'Previous',
                             style: TextStyle(
-                                color: Style.FONT_COLOR,
-                                fontSize: ScreenUtil().setSp(18 - fontReducer),
-                                fontFamily: Style.OS_SEMIBOLD),
+                                color: Style.FONT_COLOR, fontSize: ScreenUtil().setSp(18 - fontReducer), fontFamily: Style.OS_SEMIBOLD),
                           ),
                         ),
                         Text(
                           ' / ',
                           style: TextStyle(
-                              color: Style.FONT_COLOR,
-                              fontSize: ScreenUtil().setSp(18 - fontReducer),
-                              fontFamily: Style.OS_SEMIBOLD),
+                              color: Style.FONT_COLOR, fontSize: ScreenUtil().setSp(18 - fontReducer), fontFamily: Style.OS_SEMIBOLD),
                         ),
                         GestureDetector(
                           onTap: currentPageIndex <
-                                  Pages.widgetListGetter(
-                                                  context, widget.isDesktop)[
-                                              StringValues.selectedOption]
-                                          .length -
-                                      1
+                                  Pages.widgetListGetter(context, widget.isDesktop)[StringValues.selectedOption].length - 1
                               ? () {
                                   setState(() {
                                     currentPageIndex++;
-                                    _pc.animateToPage(currentPageIndex,
-                                        duration: Duration(milliseconds: 500),
-                                        curve: Curves.fastOutSlowIn);
+                                    _pc.animateToPage(currentPageIndex, duration: Duration(milliseconds: 500), curve: Curves.fastOutSlowIn);
                                   });
                                 }
                               : () {},
                           child: Text(
                             'Next',
                             style: TextStyle(
-                                color: Style.FONT_COLOR,
-                                fontSize: ScreenUtil().setSp(18 - fontReducer),
-                                fontFamily: Style.OS_SEMIBOLD),
+                                color: Style.FONT_COLOR, fontSize: ScreenUtil().setSp(18 - fontReducer), fontFamily: Style.OS_SEMIBOLD),
                           ),
                         ),
                         Text(widget.isDesktop ? '    ' : '  '),
                         Text(
                           '( ${currentPageIndex + 1} of ${Pages.widgetListGetter(context, widget.isDesktop)[StringValues.selectedOption].length} )',
                           style: TextStyle(
-                              color: Style.FONT_COLOR,
-                              fontSize: ScreenUtil().setSp(18 - fontReducer),
-                              fontFamily: Style.OS_SEMIBOLD),
+                              color: Style.FONT_COLOR, fontSize: ScreenUtil().setSp(18 - fontReducer), fontFamily: Style.OS_SEMIBOLD),
                         ),
                       ],
                     ),
@@ -252,9 +224,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                   GestureDetector(
                     onTap: () async {
                       menuAnim.forward();
-                      await showDialog(
-                          context: context,
-                          builder: (_) => MenuBox(isDesktop: widget.isDesktop));
+                      await showDialog(context: context, builder: (_) => MenuBox(isDesktop: widget.isDesktop));
                       menuAnim.reverse();
                       setState(() {
                         print("nothing");
@@ -273,14 +243,11 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
           ),
           Container(
             width: double.infinity,
-            height: ScreenUtil().setHeight(widget.isDesktop
-                ? Style.LEFT_N_RIGHT_FRAME2_H
-                : Style.PHONE_RIGHT_FRAME2_H),
+            height: ScreenUtil().setHeight(widget.isDesktop ? Style.LEFT_N_RIGHT_FRAME2_H : Style.PHONE_RIGHT_FRAME2_H),
             child: PageView(
               controller: _pc,
               physics: NeverScrollableScrollPhysics(),
-              children: Pages.widgetListGetter(
-                  context, widget.isDesktop)[StringValues.selectedOption],
+              children: Pages.widgetListGetter(context, widget.isDesktop)[StringValues.selectedOption],
             ),
           ),
           Expanded(
@@ -289,10 +256,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
               alignment: Alignment.bottomLeft,
               child: Text(
                 StringValues.options[StringValues.selectedOption],
-                style: TextStyle(
-                    color: Style.FONT_COLOR,
-                    fontSize: ScreenUtil().setSp(19 - fontReducer),
-                    fontFamily: Style.OS_BOLD),
+                style: TextStyle(color: Style.FONT_COLOR, fontSize: ScreenUtil().setSp(19 - fontReducer), fontFamily: Style.OS_BOLD),
               ),
             ),
           )
@@ -307,19 +271,12 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     if (widget.isDesktop) {
-      print("desktop");
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.SCREEN_WIDTH,
-          height: Style.SCREEN_HEIGHT,
-          allowFontScaling: true)
-        ..init(context);
+      // print("desktop");
+      ScreenUtil.instance = ScreenUtil(width: Style.SCREEN_WIDTH, height: Style.SCREEN_HEIGHT, allowFontScaling: true)..init(context);
       fontReducer = 0;
     } else {
-      print("mobile");
-      ScreenUtil.instance = ScreenUtil(
-          width: Style.PHONE_SCREEN_WIDTH,
-          height: Style.PHONE_SCREEN_HEIGHT,
-          allowFontScaling: true)
+      // print("mobile");
+      ScreenUtil.instance = ScreenUtil(width: Style.PHONE_SCREEN_WIDTH, height: Style.PHONE_SCREEN_HEIGHT, allowFontScaling: true)
         ..init(context);
       fontReducer = 5;
     }
@@ -335,9 +292,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
               crossAxisAlignment: CrossAxisAlignment.center, // vertically
               children: [
                 widget.isDesktop ? leftPanel() : SizedBox(),
-                widget.isDesktop
-                    ? SizedBox(width: ScreenUtil().setWidth(Style.FRAME1_GAP))
-                    : SizedBox(),
+                widget.isDesktop ? SizedBox(width: ScreenUtil().setWidth(Style.FRAME1_GAP)) : SizedBox(),
                 rightPanel(),
               ],
             ),
@@ -362,9 +317,7 @@ class _RootPageState extends State<RootPage> with TickerProviderStateMixin {
                                         Align(
                                           alignment: Alignment.bottomCenter,
                                           child: Container(
-                                            margin: EdgeInsets.only(
-                                                bottom:
-                                                    ScreenUtil().setHeight(74)),
+                                            margin: EdgeInsets.only(bottom: ScreenUtil().setHeight(74)),
                                             child: GestureDetector(
                                               onTap: () {
                                                 Navigator.pop(context);
